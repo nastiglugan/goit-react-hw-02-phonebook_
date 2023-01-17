@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { ContactItem } from '../ContactItem/ContactItem';
 
-export const ContactList = ({ contacts }) => {
+export const ContactList = ({ contacts, deleteContact }) => {
   return (
     <div>
       <h3>Contact List</h3>
@@ -10,7 +10,10 @@ export const ContactList = ({ contacts }) => {
           const { id } = contact;
           return (
             <li key={id}>
-              <ContactItem contactsItem={contact} />
+              <ContactItem
+                contactsItem={contact}
+                deleteContact={deleteContact}
+              />
             </li>
           );
         })}
@@ -21,4 +24,5 @@ export const ContactList = ({ contacts }) => {
 
 ContactList.propTypes = {
   contacts: PropTypes.arrayOf(PropTypes.object).isRequired,
+  deleteContact: PropTypes.func.isRequired,
 };
