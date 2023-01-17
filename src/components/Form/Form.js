@@ -1,7 +1,11 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { Component } from 'react';
 
 class Form extends Component {
+  static propTypes = {
+    onSubmit: PropTypes.func.isRequired,
+  };
+
   state = {
     name: '',
     number: '',
@@ -64,8 +68,3 @@ class Form extends Component {
 }
 
 export default Form;
-
-// Form.propTypes = {
-//   value: PropTypes.string.isRequired,
-//   onInputChange: PropTypes.func.isRequired,
-// };

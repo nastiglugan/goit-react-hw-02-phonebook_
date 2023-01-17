@@ -1,18 +1,16 @@
 import PropTypes from 'prop-types';
+import { ContactItem } from '../ContactItem/ContactItem';
 
 export const ContactList = ({ contacts }) => {
   return (
     <div>
-      <h2>Contact List</h2>
+      <h3>Contact List</h3>
       <ul>
         {contacts.map(contact => {
-          const { name, id, tel } = contact;
+          const { id } = contact;
           return (
             <li key={id}>
-              <ul>
-                <li>name:{name}</li>
-                <li>tel:{tel}</li>
-              </ul>
+              <ContactItem contactsItem={contact} />
             </li>
           );
         })}
