@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types';
 import { ContactItem } from '../ContactItem/ContactItem';
+import { ContactWrap, List, ContactTitle } from './ContactList.styled';
 
 export const ContactList = ({ contacts, deleteContact }) => {
   return (
-    <div>
-      <h3>Contact List</h3>
-      <ul>
+    <ContactWrap>
+      <ContactTitle>Contact List</ContactTitle>
+      <List>
         {contacts.map(contact => {
           const { id } = contact;
           return (
@@ -17,8 +18,8 @@ export const ContactList = ({ contacts, deleteContact }) => {
             </li>
           );
         })}
-      </ul>
-    </div>
+      </List>
+    </ContactWrap>
   );
 };
 
